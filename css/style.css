@@ -339,6 +339,9 @@ a {
 
 
 
+
+
+
 .select {
   display: inline-block;
   background: #FFFFFF;
@@ -397,11 +400,19 @@ a {
   margin-left: auto;
   text-align: center;
   width: 40px;
- 
   border-radius: 12px;
 }
-.select__icon rect:hover {
-  fill: #19B7BB;
+.noicon {
+  background-color: #EAEAF3;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.noicon:hover {
+  background-color: #19B7BB;
+}
+.noicon:hover .noicon2{
+  fill: white;
 }
 .select__body {
   border: 1px solid #EAEAF3;
@@ -642,21 +653,52 @@ margin-right: -17px;
 
 
 .topnav2 {
-   margin-top: 10px;
+  margin-top: 0px;
   background: #efeeee;
   box-shadow: 0px 12px 24px rgba(126, 120, 120, 0.25);
   backdrop-filter: blur(150px);
   border-radius: 16px;
-  height: 72px;
+  height: 95px;
   background: #efeeee;
   position: absolute;
- width: 100%;
+  width: 100%;
   vertical-align: middle;
   display: inline-block;
-z-index: 1000;
+  z-index: 1000;
 
 }
+.socials {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(116, 115, 115, 0.15);
+  border-radius: 50%;
+}
+.socials svg{
+  margin-top: 8px;
+  height: 16px;
+}
+.socials:hover {
+  background: #19B7BB;
+}
+.socials:hover svg{
+  fill: white;
+}
+#flex-li {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.socials-div {
+  margin-top: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
 .menu2 {
+  margin-top: 10px;
   display: flex;
 }
 .menu2 li {
@@ -832,7 +874,7 @@ display: inline-block;
 
 /* Кейсы */
 
-.swiper-container {
+.image-slider {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
@@ -847,6 +889,32 @@ display: inline-block;
   box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
   backdrop-filter: blur(150px);
   border-radius: 24px;
+}
+.image-slider-2 {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
+  backdrop-filter: blur(150px);
+}
+.image-slider-3 {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 24px rgba(126, 120, 120, 0.1);
+  backdrop-filter: blur(150px);
 }
 .image-slider-2.swiper-container {
   display: none;
@@ -881,7 +949,7 @@ display: inline-block;
   text-align: center;
   margin: 28px 0px;
 }
-.swiper-wrapper {
+.image-slider__wrapper {
   width: 700px;
   display: flex;
   justify-content: space-between;
@@ -897,12 +965,12 @@ display: inline-block;
   box-shadow: 0px 8px 32px rgba(103, 97, 97, 0.1);
   border-radius: 12px;
 }
-.swiper-slide {  
+.image-slider__slide {  
   width: 20%;
   line-height: 200px;
   
 }
-.swiper-slide img{
+.image-slider__slide img{
   white-space: nowrap;
     overflow: hidden;
     vertical-align: middle;
@@ -1011,11 +1079,22 @@ display: inline-block;
   .all-content {
   width: 100%;
 }
-.swiper-container {
+.image-slider {
   width: 100%;
+  max-width: 100%;
 }
 .topnav {
   display: none;
+}
+.topnav2 {
+  height: 127px;
+}
+.menu2 {
+  margin-top: 25px;
+  margin-left: 15px;
+}
+.menu2 a{
+  font-size: 15pt;
 }
 .zagolovok {
   margin: 60px 32px 0 50px; 
@@ -1058,14 +1137,9 @@ body {
 .div-nav {
   
 }
-  .all-content {
+.all-content {
   max-width: 704px;
   min-height: 432px;
-  border-radius: 16px;
-}
-.swiper-container {
-  max-width: 704px;
-  min-height: 0;
   border-radius: 16px;
 }
 #i1 {
@@ -1075,7 +1149,7 @@ body {
   height: 86px;
 }
 
-.swiper-slide {  
+.image-slider__slide {  
   line-height: 150px;
 }
 .body {
@@ -1120,6 +1194,14 @@ body {
   margin-right: 7px;
   height: 16px;
   width: 16px;
+}
+.noicon {
+  height: 16px;
+}
+.noicon2 {
+  width: 8px;
+  height: 4px;
+  margin-bottom: 7px;
 }
 .select__current {
   margin-top: 7px;
@@ -1256,11 +1338,11 @@ width: 450px;
   line-height: 56px;
   margin-top: 24px;
 }
-.swiper-container {
+.image-slider-3 {
   max-width: 704px;
   min-height: 150px;
   border-radius: 16px;
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .image-slider.swiper-container {
@@ -1452,9 +1534,9 @@ body {
 }
 .buttons {
   min-height: 64px;
-display: inline-block;
-width: 100%;
- margin-left: 16px;
+  display: inline-block;
+  width: 100%;
+  margin-left: 16px;
 }
 .div-form input {
   padding: 8px 16px;
@@ -1537,20 +1619,20 @@ width: 100%;
 
 
 .topnav22 {
-position: fixed;
+  position: fixed;
   bottom: 0;
-   margin-top: 0;
+  margin-top: 0;
   background: rgba(255, 255, 255, 0.7);
-box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
-backdrop-filter: blur(50px);
-border-radius: 24px 24px 0px 0px;
-  height: 413px;
+  box-shadow: 0px -12px 24px rgba(126, 120, 120, 0.25);
+  backdrop-filter: blur(50px);
+  border-radius: 24px 24px 0px 0px;
+  height: 383px;
   background: #efeeee;
   position: absolute;
- width: 100%;
+  width: 100%;
   vertical-align: middle;
   display: block;
-z-index: 1000;
+  z-index: 1000;
 
 }
 .menu22 {
@@ -1649,7 +1731,7 @@ margin-right:  0px;
   line-height: 24px;
   margin-top: 24px;
 }
-.swiper-container {
+.image-slider-3 {
   max-width: 704px;
   min-height: 67px;
   border-radius: 12px;
@@ -1735,7 +1817,7 @@ margin-right:  0px;
 #i5 {
   height: 25px;
 }
-.swiper-slide {  
+.image-slider__slide {  
   line-height: 67px;
   border-radius: 12px;
 }
